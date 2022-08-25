@@ -1,8 +1,8 @@
 {
   "kind": "column",
-  "name": "Customized timeline chart",
+  "name": "Customized amCharts chart",
   "description": "",
-  "author": "Thinh Dinh <thinh@lowcode.agency>",
+  "author": "Gustavo A. Valero P. - LowCode Agency",
   "params": [
     {
       "name": "data",
