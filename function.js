@@ -57,104 +57,8 @@ cursor.lineY.set("visible", false);
 
 var colorSet = am5.ColorSet.new(root, {});
 
-//   ***  The data ***
-var data = [
-  {
-    year: "2014",
-    value: 23,
-    strokeSettings: {
-      stroke: colorSet.getIndex(0)
-    },
-    fillSettings: {
-      fill: colorSet.getIndex(0),
-    },
-    bulletSettings: {
-      fill: colorSet.getIndex(0)
-    }
-  },
-  {
-    year: "2015",
-    value: 26,
-    bulletSettings: {
-      fill: colorSet.getIndex(0)
-    }
-  },
-  {
-    year: "2016",
-    value: 30,
-    bulletSettings: {
-      fill: colorSet.getIndex(0)
-    }
-  },
-  {
-    year: "2017",
-    value: 20,
-    bulletSettings: {
-      fill: colorSet.getIndex(0)
-    }
-  },
-  {
-    year: "2018",
-    value: 30,
-    strokeSettings: {
-      stroke: colorSet.getIndex(3)
-    },
-    fillSettings: {
-      fill: colorSet.getIndex(3),
-    },
-    bulletSettings: {
-      fill: colorSet.getIndex(3)
-    }
-  },
-  {
-    year: "2019",
-    value: 30,
-    bulletSettings: {
-      fill: colorSet.getIndex(3)
-    }
-  },
-  {
-    year: "2020",
-    value: 31,
-    bulletSettings: {
-      fill: colorSet.getIndex(3)
-    }
-  },
-  {
-    year: "2021",
-    value: 34,
-    strokeSettings: {
-      stroke: colorSet.getIndex(6)
-    },
-    fillSettings: {
-      fill: colorSet.getIndex(6),
-    },
-    bulletSettings: {
-      fill: colorSet.getIndex(6)
-    }
-  },
-  {
-    year: "2022",
-    value: 33,
-    bulletSettings: {
-      fill: colorSet.getIndex(6)
-    }
-  },
-  {
-    year: "2023",
-    value: 34,
-    bulletSettings: {
-      fill: colorSet.getIndex(6)
-    }
-  },
-  {
-    year: "2024",
-    value: 36,
-    bulletSettings: {
-      fill: colorSet.getIndex(6)
-    }
-  }
-];
+//   *** The data ***
+var data = [ ${data} ];
 
 // Create axes
 var xRenderer = am5xy.AxisRendererX.new(root, {});
@@ -165,7 +69,7 @@ xRenderer.labels.template.setAll({
 });
 
 var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-  categoryField: "year",
+  categoryField: "time",  //***
   renderer: xRenderer,
   tooltip: am5.Tooltip.new(root, {})
 }));
@@ -181,7 +85,7 @@ var series = chart.series.push(am5xy.LineSeries.new(root, {
   xAxis: xAxis,
   yAxis: yAxis,
   valueYField: "value",
-  categoryXField: "year",
+  categoryXField: "time",     //***
   tooltip: am5.Tooltip.new(root, {
     labelText: "{valueY}",
     dy:-5
