@@ -10,11 +10,6 @@
       "type": "string"
     },
     {
-      "name": "max",
-      "displayName": "Timeline max",
-      "type": "string"
-    },
-    {
       "name": "width",
       "displayName": "Width (default: 100%)",
       "type": "number"
