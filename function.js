@@ -1,5 +1,4 @@
-// https://www.chartjs.org/
-
+// https://www.amcharts.com/demos/line-with-changing-color
 
 window.function = function (data, width, height, max) {
 
@@ -9,24 +8,26 @@ window.function = function (data, width, height, max) {
   width = width.value ?? "100";
   height = height.value ?? "80";
  
-
   let ht = `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Glide Yes-Code</title>
+	
+<!-- Resources (HTML) -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
-<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
   </head>
   <body>
 <div id="chartdiv"></div>
-<style>
-#chartdiv {
-  width: ${width}vw;
-  height: ${height}vh;
-}
+<!-- Styles (CSS) -->
+  <style>
+  #chartdiv {
+    width: ${width}%;
+    height: ${height}px;
+  }
 
 </style>
     <script>
