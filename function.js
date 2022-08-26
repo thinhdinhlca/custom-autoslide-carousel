@@ -62,8 +62,8 @@ var colorSet = am5.ColorSet.new(root, {});
 //   ***  The data ***
 var data = [
   {
-    year: "2014",
-    value: 23.5,
+    year: "2010",
+    value: 23,
     strokeSettings: {
       stroke: colorSet.getIndex(0)
     },
@@ -75,7 +75,7 @@ var data = [
     }
   },
   {
-    year: "2015",
+    year: "2011",
     value: 26,
     bulletSettings: {
       fill: colorSet.getIndex(0)
