@@ -6,7 +6,7 @@ window.function = function (data, width, height, max) {
   data = data.value ?? "";
   max = max.value ?? "";
   width = width.value ?? "100";
-  height = height.value ?? "80";
+  height = height.value ?? "500";
  
   let ht = `<!DOCTYPE html>
 <html>
