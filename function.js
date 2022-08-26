@@ -14,23 +14,23 @@ window.function = function (data, width, height, max) {
     <meta charset="utf-8">
     <title>Glide Yes-Code</title>
 	
-<!-- Resources (HTML) -->
-  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
+   <!-- Resources (HTML) -->
+     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
   </head>
   <body>
-<div id="chartdiv"></div>
-<!-- Styles (CSS) -->
-  <style>
-  #chartdiv {
-    width: ${width}%;
-    height: ${height}px;
-  }
+  <div id="chartdiv"></div>
 
-</style>
-    <script>
+  <!-- Styles (CSS) -->
+  <style>
+    #chartdiv {
+      width: ${width}%;
+      height: ${height}px;
+    }
+  </style>
+
+<script>
 am4core.ready(function() {
 
 // Themes begin
