@@ -4,9 +4,8 @@ window.function = function (data, width, height) {
 
   // data
   data = data.value ?? "";
-  max = max.value ?? "";
-  width = width.value ?? "100";
-  height = height.value ?? "500";
+  width = width.value ?? 100;
+  height = height.value ?? 500;
  
   let ht = `<!DOCTYPE html>
 <html>
