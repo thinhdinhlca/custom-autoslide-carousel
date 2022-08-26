@@ -29,10 +29,9 @@ window.function = function (data, width, height, max) {
       height: ${height}px;
     }
   </style>
-
-<!-- Chart code (JavaScript)  -->
+  
 <script>
-
+<!-- Chart code (JavaScript)  -->
 // Create root element
 var root = am5.Root.new("chartdiv");
 
