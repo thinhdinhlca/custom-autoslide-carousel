@@ -1,6 +1,6 @@
 {
   "kind": "column",
-  "name": "Customized amCharts chart",
+  "name": "amCharts chart: Line with Changing Color",
   "description": "",
   "author": "Gustavo A. Valero P. - LowCode Agency",
   "params": [
@@ -16,12 +16,12 @@
     },
     {
       "name": "width",
-      "displayName": "Width (default to 100vw)",
+      "displayName": "Width (default: 100%)",
       "type": "number"
     },
     {
       "name": "height",
-      "displayName": "Height (default to 80vh)",
+      "displayName": "Height (default: 500px)",
       "type": "number"
     }
   ],
