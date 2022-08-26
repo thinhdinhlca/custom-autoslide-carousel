@@ -14,7 +14,7 @@ window.function = function (data, width, height, max) {
     <meta charset="utf-8">
     <title>Glide Yes-Code</title>
 	
-   <!-- Resources (HTML) -->
+     <!-- Resources (HTML) -->
      <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
      <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
      <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
@@ -30,83 +30,202 @@ window.function = function (data, width, height, max) {
     }
   </style>
 
+<!-- Chart code (JavaScript)  -->
 <script>
-am4core.ready(function() {
 
-// Themes begin
-am4core.useTheme(am4themes_animated);
-// Themes end
+// Create root element
+var root = am5.Root.new("chartdiv");
 
-var chart = am4core.create("chartdiv", am4charts.XYChart);
-chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-chart.paddingRight = 20;
-chart.paddingLeft = 0;
-chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH:mm:ss";
+// Set themes
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
 
-chart.data = [
-  ${data}
+// Create chart
+var chart = root.container.children.push(am5xy.XYChart.new(root, {
+  panX: true,
+  panY: true,
+  wheelX: "panX",
+  wheelY: "zoomX",
+  layout: root.verticalLayout,
+  pinchZoomX:true
+}));
+
+// Add cursor
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  behavior: "none"
+}));
+cursor.lineY.set("visible", false);
+
+var colorSet = am5.ColorSet.new(root, {});
+
+//   ***  The data ***
+var data = [
+  {
+    year: "2014",
+    value: 23.5,
+    strokeSettings: {
+      stroke: colorSet.getIndex(0)
+    },
+    fillSettings: {
+      fill: colorSet.getIndex(0),
+    },
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2015",
+    value: 26,
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2016",
+    value: 30,
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2017",
+    value: 20,
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2018",
+    value: 30,
+    strokeSettings: {
+      stroke: colorSet.getIndex(3)
+    },
+    fillSettings: {
+      fill: colorSet.getIndex(3),
+    },
+    bulletSettings: {
+      fill: colorSet.getIndex(3)
+    }
+  },
+  {
+    year: "2019",
+    value: 30,
+    bulletSettings: {
+      fill: colorSet.getIndex(3)
+    }
+  },
+  {
+    year: "2020",
+    value: 31,
+    bulletSettings: {
+      fill: colorSet.getIndex(3)
+    }
+  },
+  {
+    year: "2021",
+    value: 34,
+    strokeSettings: {
+      stroke: colorSet.getIndex(6)
+    },
+    fillSettings: {
+      fill: colorSet.getIndex(6),
+    },
+    bulletSettings: {
+      fill: colorSet.getIndex(6)
+    }
+  },
+  {
+    year: "2022",
+    value: 33,
+    bulletSettings: {
+      fill: colorSet.getIndex(6)
+    }
+  },
+  {
+    year: "2023",
+    value: 34,
+    bulletSettings: {
+      fill: colorSet.getIndex(6)
+    }
+  },
+  {
+    year: "2024",
+    value: 36,
+    bulletSettings: {
+      fill: colorSet.getIndex(6)
+    }
+  }
 ];
 
-var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
-categoryAxis.dataFields.category = "name";
-categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.renderer.inversed = true;
-categoryAxis.renderer.labels.template.fontSize = 12;
-
-var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-dateAxis.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
-dateAxis.renderer.minGridDistance = 50;
-dateAxis.baseInterval = { count: 6, timeUnit: "seconds" };
-dateAxis.max = "${max}";
-dateAxis.strictMinMax = true;
-dateAxis.renderer.tooltipLocation = 0;
-dateAxis.renderer.labels.template.fontSize = 12;
-
-var series1 = chart.series.push(new am4charts.ColumnSeries());
-series1.columns.template.width = am4core.percent(40);
-series1.columns.template.tooltipText = "{tag}: {fromX} - {toX}";
-
-series1.dataFields.openDateX = "fromDate";
-series1.dataFields.dateX = "toDate";
-series1.dataFields.tagX = "tag";
-series1.dataFields.categoryY = "name";
-series1.dataFields.fromX = "fromTime";
-series1.dataFields.toX = "toTime";
-series1.columns.template.propertyFields.fill = "color"; // get color from data
-series1.columns.template.propertyFields.stroke = "color";
-series1.columns.template.strokeOpacity = 1;
-
-
-chart.scrollbarX = new am4core.Scrollbar();
-chart.scrollbarX.startGrip.background.fill = am4core.color("black");
-chart.scrollbarX.endGrip.background.fill = am4core.color("black");
-chart.scrollbarX.thumb.background.fill = am4core.color("black");
-
-var buttonContainer = chart.plotContainer.createChild(am4core.Container);
-buttonContainer.shouldClone = false;
-buttonContainer.align = "right";
-buttonContainer.valign = "top";
-buttonContainer.zIndex = Number.MAX_SAFE_INTEGER;
-buttonContainer.marginTop = 5;
-buttonContainer.marginRight = 5;
-buttonContainer.layout = "horizontal";
-
-var zoomInButton = buttonContainer.createChild(am4core.Button);
-zoomInButton.label.text = "+";
-zoomInButton.events.on("hit", function(ev) {
-  var diff = dateAxis.maxZoomed - dateAxis.minZoomed;
-  var delta = diff * 0.1;
-  dateAxis.zoomToDates(new Date(dateAxis.minZoomed + delta), new Date(dateAxis.maxZoomed - delta));
+// Create axes
+var xRenderer = am5xy.AxisRendererX.new(root, {});
+xRenderer.grid.template.set("location", 0.5);
+xRenderer.labels.template.setAll({
+  location: 0.5,
+  multiLocation: 0.5
 });
 
-var zoomOutButton = buttonContainer.createChild(am4core.Button);
-zoomOutButton.label.text = "-";
-zoomOutButton.events.on("hit", function(ev) {
-  var diff = dateAxis.maxZoomed - dateAxis.minZoomed;
-  var delta = diff * 0.1;
-  dateAxis.zoomToDates(new Date(dateAxis.minZoomed - delta), new Date(dateAxis.maxZoomed + delta));
+var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+  categoryField: "year",
+  renderer: xRenderer,
+  tooltip: am5.Tooltip.new(root, {})
+}));
+
+xAxis.data.setAll(data);
+
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  maxPrecision: 0,
+  renderer: am5xy.AxisRendererY.new(root, {})
+}));
+
+var series = chart.series.push(am5xy.LineSeries.new(root, {
+  xAxis: xAxis,
+  yAxis: yAxis,
+  valueYField: "value",
+  categoryXField: "year",
+  tooltip: am5.Tooltip.new(root, {
+    labelText: "{valueY}",
+    dy:-5
+  })
+}));
+
+series.strokes.template.setAll({
+  templateField: "strokeSettings",
+  strokeWidth: 2
+});
+
+series.fills.template.setAll({
+  visible: true,
+  fillOpacity: 0.5,
+  templateField: "fillSettings"
+});
+
+
+series.bullets.push(function() {
+  return am5.Bullet.new(root, {
+    sprite: am5.Circle.new(root, {
+      templateField: "bulletSettings",
+      radius: 5
+    })
   });
-}); // end am4core.ready()
+});
+
+series.data.setAll(data);
+series.appear(1000);
+
+// Add scrollbar
+// https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+chart.set("scrollbarX", am5.Scrollbar.new(root, {
+  orientation: "horizontal",
+  marginBottom: 20
+}));
+
+// Make stuff animate on load
+// https://www.amcharts.com/docs/v5/concepts/animations/
+chart.appear(1000, 100);
+
+
 </script>
 
 
