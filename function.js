@@ -1,6 +1,6 @@
 // https://www.amcharts.com/demos/line-with-changing-color
 
-window.function = function (data, width, height, max) {
+window.function = function (data, width, height) {
 
   // data
   data = data.value ?? "";
