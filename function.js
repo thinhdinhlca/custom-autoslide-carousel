@@ -76,6 +76,21 @@ var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
 
 xAxis.data.setAll(data);
 
+xAxis.events.on("sizechanged", function(ev) {
+  var axis = ev.target;
+  var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex);
+  if (cellWidth < axis.renderer.labels.template.maxWidth) {
+    axis.renderer.labels.template.rotation = -90;
+    axis.renderer.labels.template.horizontalCenter = "right";
+    axis.renderer.labels.template.verticalCenter = "middle";
+  }
+  else {
+    axis.renderer.labels.template.rotation = 0;
+    axis.renderer.labels.template.horizontalCenter = "middle";
+    axis.renderer.labels.template.verticalCenter = "top";
+  }
+});
+
 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
   maxPrecision: 0,
   renderer: am5xy.AxisRendererY.new(root, {})
