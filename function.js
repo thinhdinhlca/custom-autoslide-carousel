@@ -65,13 +65,13 @@ var xRenderer = am5xy.AxisRendererX.new(root, {});
 xRenderer.grid.template.set("location", 0.5);
 xRenderer.labels.template.setAll({
   location: 0.5,
+  rotation: -90,
   multiLocation: 0.5
 });
 
 var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
   categoryField: "time",  //***
   renderer: xRenderer,
-  rotation: -90,
   paddingRight: 15,
   tooltip: am5.Tooltip.new(root, {})
 }));
