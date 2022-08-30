@@ -63,8 +63,8 @@ var data = [ ${data} ];
 // Create axes
 var xRenderer = am5xy.AxisRendererX.new(root, {});
 xRenderer.grid.template.set("location", 0.5);
-xRenderer.labels.template.fontSize = 8;
 xRenderer.labels.template.setAll({
+  fontSize: 8,
   location: 0.5,
   rotation: -90,
   multiLocation: 0.5
