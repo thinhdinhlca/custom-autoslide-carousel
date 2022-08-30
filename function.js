@@ -71,6 +71,8 @@ xRenderer.labels.template.setAll({
 var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
   categoryField: "time",  //***
   renderer: xRenderer,
+  rotation: -90,
+  paddingRight: 15,
   tooltip: am5.Tooltip.new(root, {})
 }));
 
@@ -91,21 +93,6 @@ var series = chart.series.push(am5xy.LineSeries.new(root, {
     dy:-5
   })
 }));
-
-xAxis.events.on("sizechanged", function(ev) {
-  var axis = ev.target;
-  var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex);
-  if (cellWidth < axis.renderer.labels.template.maxWidth) {
-    axis.renderer.labels.template.rotation = -90;
-    axis.renderer.labels.template.horizontalCenter = "right";
-    axis.renderer.labels.template.verticalCenter = "middle";
-  }
-  else {
-    axis.renderer.labels.template.rotation = 0;
-    axis.renderer.labels.template.horizontalCenter = "middle";
-    axis.renderer.labels.template.verticalCenter = "top";
-  }
-});
 
 series.strokes.template.setAll({
   templateField: "strokeSettings",
