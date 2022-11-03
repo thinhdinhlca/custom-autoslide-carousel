@@ -1,12 +1,12 @@
 {
   "kind": "column",
-  "name": "amCharts chart: Line with Changing Color",
+  "name": "Custom autoslide carousel,
   "description": "",
-  "author": "Gustavo A. Valero P. - LowCode Agency",
+  "author": "Codepen",
   "params": [
     {
       "name": "data",
-      "displayName": "Timeline data",
+      "displayName": "Quote data",
       "type": "string"
     },
     {
@@ -17,6 +17,11 @@
     {
       "name": "height",
       "displayName": "Height (default: 500px)",
+      "type": "number"
+    },
+    {
+      "name": "slidetime",
+      "displayName": "Slide time",
       "type": "number"
     }
   ],
