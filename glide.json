@@ -18,11 +18,6 @@
       "name": "height",
       "displayName": "Height (default: 500px)",
       "type": "number"
-    },
-    {
-      "name": "slidetime",
-      "displayName": "Slide time",
-      "type": "number"
     }
   ],
   "result": {
