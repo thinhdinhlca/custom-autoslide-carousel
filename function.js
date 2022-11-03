@@ -1,12 +1,11 @@
 // https://www.amcharts.com/demos/line-with-changing-color
 
-window.function = function (data, width, height, slidetime) {
+window.function = function (data, width, height) {
 
   // data
   data = data.value ?? "";
   width = width.value ?? 100;
   height = height.value ?? 500;
-  slidetime = slidetime.value ?? 2000;
  
   let ht = `<!DOCTYPE html>
 <html>
@@ -37,7 +36,7 @@ window.function = function (data, width, height, slidetime) {
       $(".slider").owlCarousel({
         loop: true,
         autoplay: true,
-        autoplayTimeout: ${slidetime}, //2000ms = 2s;
+        autoplayTimeout: 7000, //2000ms = 2s;
         autoplayHoverPause: true,
       });
     </script>
