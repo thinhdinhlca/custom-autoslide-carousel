@@ -14,122 +14,119 @@ window.function = function (data, width, height) {
     <title>Glide Yes-Code</title>
 	
      <!-- Resources (HTML) -->
-     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
   </head>
   <body>
-  <div id="chartdiv"></div>
+  <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                    <!-- Carousel Slides / Quotes -->
+                    <div class="carousel-inner text-center">
+                        <!-- Quote 1 -->
+                        <div class="item active">
+                            <blockquote>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. !</p>
+                                        <small>Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <!-- Quote 2 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                        <small>Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <!-- Quote 3 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. .</p>
+                                        <small>Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <!-- Bottom Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="https://s3.amazonaws.com/uifaces/faces/twitter/mantia/128.jpg" alt="">
+                        </li>
+                        <li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" alt="">
+                        </li>
+                        <li data-target="#quote-carousel" data-slide-to="2"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="">
+                        </li>
+                    </ol>
+
+                    <!-- Carousel Buttons Next/Prev -->
+                    <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                    <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-primary" href="http://thecodeblock.com/create-a-quote-testimonial-slider-using-bootstrap-carousel"><i class="fa fa-arrow-left"></i> Back to Article</a>
+    </div>
 
   <!-- Styles (CSS) -->
   <style>
-    #chartdiv {
-      width: ${width}%;
-      height: ${height}px;
-    }
+    #quote-carousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 60px;
+}
+#quote-carousel .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+#quote-carousel .carousel-indicators {
+    position: relative;
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-top: 20px;
+    margin-right: -19px;
+}
+#quote-carousel .carousel-indicators li {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all .4s ease-in;
+    vertical-align: middle;
+}
+#quote-carousel .carousel-indicators .active {
+    width: 128px;
+    height: 128px;
+    opacity: 1;
+    transition: all .2s;
+}
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
   </style>
   
 <script>
-<!-- Chart code (JavaScript)  -->
-// Create root element
-var root = am5.Root.new("chartdiv");
-
-// Set themes
-root.setThemes([
-  am5themes_Animated.new(root)
-]);
-
-// Create chart
-var chart = root.container.children.push(am5xy.XYChart.new(root, {
-  panX: true,
-  panY: true,
-  wheelX: "panX",
-  wheelY: "zoomX",
-  layout: root.verticalLayout,
-  pinchZoomX:true
-}));
-
-// Add cursor
-var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
-  behavior: "none"
-}));
-cursor.lineY.set("visible", false);
-
-var colorSet = am5.ColorSet.new(root, {});
-
-//   *** The data ***
-var data = [ ${data} ];
-
-// Create axes
-var xRenderer = am5xy.AxisRendererX.new(root, {});
-xRenderer.grid.template.set("location", 0.5);
-xRenderer.labels.template.setAll({
-  fontSize: 8,
-  location: 0.5,
-  rotation: -90,
-  multiLocation: 0.5
-});
-
-var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-  categoryField: "time",  //***
-  renderer: xRenderer,
-  paddingRight: 15,
-  tooltip: am5.Tooltip.new(root, {})
-}));
-
-xAxis.data.setAll(data);
-
-var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-  maxPrecision: 0,
-  renderer: am5xy.AxisRendererY.new(root, {})
-}));
-
-var series = chart.series.push(am5xy.LineSeries.new(root, {
-  xAxis: xAxis,
-  yAxis: yAxis,
-  valueYField: "value",
-  categoryXField: "time",     //***
-  tooltip: am5.Tooltip.new(root, {
-    labelText: "{valueY}",
-    dy:-5
-  })
-}));
-
-series.strokes.template.setAll({
-  templateField: "strokeSettings",
-  strokeWidth: 2
-});
-
-series.fills.template.setAll({
-  visible: true,
-  fillOpacity: 0.5,
-  templateField: "fillSettings"
-});
-
-
-series.bullets.push(function() {
-  return am5.Bullet.new(root, {
-    sprite: am5.Circle.new(root, {
-      templateField: "bulletSettings",
-      radius: 5
-    })
-  });
-});
-
-series.data.setAll(data);
-series.appear(1000);
-
-// Add scrollbar
-// https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-chart.set("scrollbarX", am5.Scrollbar.new(root, {
-  orientation: "horizontal",
-  marginBottom: 20
-}));
-
-// Make stuff animate on load
-// https://www.amcharts.com/docs/v5/concepts/animations/
-chart.appear(1000, 100);
-
 
 </script>
 
