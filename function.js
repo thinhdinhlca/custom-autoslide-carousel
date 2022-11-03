@@ -16,307 +16,154 @@ window.function = function (data, width, height) {
      <!-- Resources (HTML) -->
   </head>
   <body>
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="slider-item swiper-slide">
-      <div class="slider-image-wrapper">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2600&q=80" alt="SliderImg">
-        </div>
-      <div class="slider-item-content">
-        <h1>Postcards From Italy</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-      </div>
-    </div>
-    <div class="slider-item swiper-slide">
-      <div class="slider-image-wrapper">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="SliderImg">
-        </div>
-      <div class="slider-item-content">
-        <h1>Bunker</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-      </div>
-    </div>
-    <div class="slider-item swiper-slide">
-      <div class="slider-image-wrapper">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2600&q=80" alt="SliderImg">
-        </div>
-      <div class="slider-item-content">
-        <h1>Small Mountain</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-      </div>
-    </div>
-    <div class="slider-item swiper-slide">
-      <div class="slider-image-wrapper">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1564604761388-83eafc96f668?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=801.2.1&auto=format&fit=crop&w=2167&q=80" alt="SliderImg">
-        </div>
-      <div class="slider-item-content">
-        <h1>Walking On a Dream</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-      </div>
-    </div>
-  </div>
-  <div class="slider-buttons">
-      <button class="swiper-button-prev">Prev</button>
-      <button class="swiper-button-next">Next</button>
-  </div>
+<!DOCTYPE html>
 
-  <div class="swiper-pagination"></div>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+ 
+  
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  </head>
+  <body>
+    <div class="slider owl-carousel">
+      <div class="card">
+        <div class="img">
+<img src="#" alt=""></div>
+<div class="content">
+          <div class="title">
+Briana Tozour</div>
+<div class="sub-title">
+Graphic Designer</div>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+<div class="btn">
+            <button>Read more</button>
+          </div>
 </div>
+</div>
+<div class="card">
+        <div class="img">
+<img src="#" alt=""></div>
+<div class="content">
+          <div class="title">
+Pricilla Preez</div>
+<div class="sub-title">
+Web Developer</div>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+<div class="btn">
+            <button>Read more</button>
+          </div>
+</div>
+</div>
+<div class="card">
+        <div class="img">
+<img src="#" alt=""></div>
+<div class="content">
+          <div class="title">
+Eliana Maia</div>
+<div class="sub-title">
+App Developer</div>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+<div class="btn">
+            <button>Read more</button>
+          </div>
+</div>
+</div>
+</div>
+<script>
+      $(".slider").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4000, //2000ms = 2s;
+        autoplayHoverPause: true,
+      });
+    </script>
+
+  </body>
+</html>
+
+
   <!-- Styles (CSS) -->
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-
-* {
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
-html {
-  width: 100%;
-  margin: 0;
-  padding:0;
+html,body{
+  display: grid;
   height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
 }
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient( 45deg,  rgba(255,166,0,1) 14.7%, rgba(255,99,97,1) 73% );
-  background-size: 200% 200%;
-  animation: gradient 15s ease infinite;
+.slider{
+  max-width: 1100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 32px;
 }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.slider .card{
+  flex: 1;
+  margin: 0 10px;
+  background: #fff;
 }
-
-h1 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 32px;
-  color: #26384E;
-  transform: translateY(20px);
-  transition: all .4s ease;
-  transition-delay: .2s;
-  overflow: hidden;
-  max-width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  
-  @media screen and (max-width: 520px) {&{
-    font-size: 16px;
-    line-height: 24px;
-   }}
-}
-
-p {
-  font-size: 16px;
-  line-height: 24px;
-  color: #889DB8;
-  transform: translateY(20px);
-  transition: all .4s ease;
-  transition-delay: .3s;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
-  text-overflow: ellipsis;
-  
-  @media screen and (max-width: 520px) {&{
-    font-size: 14px;
-    line-height: 20px;
-  }}
-}
-
-.swiper-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  position: relative;
-}
-
-.swiper-container {
-  background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 100%;
-  position: relative;
-  max-width: 420px;
-  height: 100%;
-  max-height: 420px;
-  border-radius: 10px;
-}
-
-.slider-image-wrapper {
+.slider .card .img{
   height: 200px;
   width: 100%;
-  overflow: hidden;
 }
-
-.slider-item {
-  width: 100%;
+.slider .card .img img{
   height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  opacity: 0;
-  background: linear-gradient(270deg, rgba(247,249,255,1) 0%, rgba(242,246,255,1) 100%);
-  cursor: grab;
-  
-  &-content {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: .4s;
-    
-    > * {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-  }
-}
-
-.swiper-slide-active {
-  .slider-item-content > * {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-.slider-image {
   width: 100%;
-  height: 100%;
   object-fit: cover;
-  transition: .2s;
 }
-
-.swiper-pagination {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  transform: translatex(-50%);
-  z-index: 1;
-  width: auto!important;
+.slider .card .content{
+  padding: 10px 20px;
 }
-
-.swiper-pagination-bullet {
-	border-radius: 0;
-	width: 8px;
-  height: 8px;
-  border-radius: 50%;
-	line-height: 30px;
-	font-size: 12px;
-	opacity: 1;
-	background: rgba(255, 185, 0,0.3);
-  display: inline-block;
-  margin-right: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
+.card .content .title{
+  font-size: 25px;
+  font-weight: 600;
 }
-
-.swiper-pagination-bullet-active {
-	background: #FFB200;
-  width: 20px;
-  border-radius: 10px;
+.card .content .sub-title{
+  font-size: 20px;
+  font-weight: 600;
+  color: #e74c3c;
+  line-height: 20px;
 }
-
-.slider-buttons {
-  position: absolute;
-  display: flex;
-  top: 100%;
-  justify-content: flex-end;
-  width: 100%;
-  padding-top: 8px;
+.card .content p{
+  text-align: justify;
+  margin: 10px 0;
 }
-
-.swiper-button-next,
-.swiper-button-prev {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
+.card .content .btn{
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+.card .content .btn button{
+  background: #e74c3c;
   color: #fff;
-  position: relative;
-  margin-left: 4px;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    background-color: #fff;
-    height: 1px;
-    width: 0;
-    left: 0;
-    //top: 50%;
-    //transform: translatey(-50%);
-    bottom: -1px;
-    transition: .2s;
-  }
-  
-  &:hover:before { width: 100%; }
+  border: none;
+  outline: none;
+  font-size: 17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card .content .btn button:hover{
+  transform: scale(0.9);
 }
 
-.socials {
-  position: fixed;
-  top: 12px;
-  right: 16px;
-  display: flex;
-  align-items: center;
-  
-  .social-link {
-    display: inline-block;
-    margin-left: 8px;
-    color: #fff;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .swiper-button-next:hover:before,
-  .swiper-button-prev:hover:before {
-  display: none;
-  }
-}
   </style>
   
 <script>
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  effect: 'fade',
-  loop: true,
-  speed: 30,
-  mousewheel: {
-    invert: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    dynamicBullets: true
-  },
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
-});
+
 </script>
 
 
