@@ -35,6 +35,7 @@ window.function = function (data, width, height) {
 <script>
       $(".slider").owlCarousel({
         loop: true,
+	items: 6,
         autoplay: true,
         autoplayTimeout: 7000, //2000ms = 2s;
         autoplayHoverPause: true,
